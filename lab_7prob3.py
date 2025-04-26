@@ -1,27 +1,31 @@
 from lab_7class import * 
 
 def sum_of_leaves(root, sum):
-  pass
+  ans = helper(root, sum)
+  return ans
+
 def helper(root,sum):
-    if root ==None:
+    if root==None:
         return sum
-    if root.left==None:
+    if root.right ==None and root.left==None:
         sum+=root.elem
-        return
+        return sum
   
-    return sum_of_leaves(root.left, sum)
+    return sum+helper(root.left, sum)+helper(root.right, sum)
 
 
 #DRIVER CODE
 #Write by yourself from the given tree
 # Creating the tree structure
-root = BTNode(10)
-root.left = BTNode(5)
-root.right = BTNode(15)
+root = BTNode(30)
+root.left = BTNode(10)
+root.right = BTNode(40)
 root.left.left = BTNode(3)
-root.left.right = BTNode(7)
-root.right.left = BTNode(12)
-root.right.right = BTNode(18)
+root.left.right = BTNode(15)
+root.right.left = BTNode(35)
+root.right.right = BTNode(55)
+root.left.left.left = BTNode(2)
+root.right.left.right=BTNode(36)
 
 # Printing the sum of leaf nodes
 print(sum_of_leaves(root, 0))

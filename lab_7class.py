@@ -21,6 +21,3 @@ def tree_construction(arr, i = 1):
   p.right = tree_construction(arr, 2*i+1)
   return p
 
-
-root2 = tree_construction([None, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', None, None, None, 'I', 'J', None, 'k'])
-inorder(root2)

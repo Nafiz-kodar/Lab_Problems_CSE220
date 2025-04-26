@@ -1,18 +1,17 @@
 from lab_7class import BTNode
 
 def find_LCA(root, x, y):
+
     if root is None:
         return None
-
-    # If both x and y are smaller than root, then LCA lies in left
+    
     if x < root.elem and y < root.elem:
-        return find_LCA(root.left, x, y)
-
-    # If both x and y are greater than root, then LCA lies in right
+        find=find_LCA(root.left, x, y)
+        return find
+    
     if x > root.elem and y > root.elem:
-        return find_LCA(root.right, x, y)
-
-    # If one key is on one side and the other is on the other side, this root is the LCA
+        find_l=find_LCA(root.right, x, y)
+        return find_l
     return root
 
 # Now let's build the tree from the image

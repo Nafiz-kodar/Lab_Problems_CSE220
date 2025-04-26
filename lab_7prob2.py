@@ -8,6 +8,7 @@ def find_path(root, key):
         return "No Path Found"    
 
 def short_way(root,key,way):
+    
     if root is None:
         return False
     way.append(root.elem)
@@ -18,7 +19,6 @@ def short_way(root,key,way):
         right_way = short_way(root.right, key, way)
         if left_way or right_way:
             return True
-    way.pop()
     return False
         
         

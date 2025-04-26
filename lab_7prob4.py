@@ -8,10 +8,10 @@ def helperOFsum(l, r, sum):
 
     if l is not None and r is not None:
         
-        local_sum = l.elem + r.elem
-        local_sum += helperOFsum(l.left, r.right, sum)
-        local_sum += helperOFsum(l.right, r.left, sum)
-        return local_sum
+        new_sum = l.elem + r.elem
+        new_sum += helperOFsum(l.left, r.right, sum)
+        new_sum += helperOFsum(l.right, r.left, sum)
+        return new_sum
 
     return sum
 

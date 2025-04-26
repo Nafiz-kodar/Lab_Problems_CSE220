@@ -1,17 +1,17 @@
 from lab_7class import * 
 
 def sum_of_leaves(root, sum):
-  ans = helper(root, sum)
+  ans = helper_jog(root, sum)
   return ans
 
-def helper(root,sum):
+def helper_jog(root,sum):
     if root==None:
         return sum
     if root.right ==None and root.left==None:
         sum+=root.elem
         return sum
   
-    return sum+helper(root.left, sum)+helper(root.right, sum)
+    return sum+helper_jog(root.left, sum)+helper_jog(root.right, sum)
 
 
 #DRIVER CODE

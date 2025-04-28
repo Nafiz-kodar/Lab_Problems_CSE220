@@ -31,8 +31,8 @@ def play_game(arena):
       if arena[i][j]>=50 and arena[i][j]%50 == 0:
         if i > 0 and arena[i-1][j] == 2:
           point += 2
-        if i < row-1 and arena[i+1][j] == 2:
-          point += 2
+        if i < row-1 and arena[i+1][j]==2:
+          point+=2
         if j > 0 and arena[i][j-1] == 2:
           point += 2
         if j < col-1 and arena[i][j+1] == 2:

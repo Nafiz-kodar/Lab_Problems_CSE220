@@ -30,9 +30,7 @@ def compress_matrix(mat):
       if i %2==0:
         sum = mat[i][j] + mat[i+1][j] + mat[i][j+1] + mat[i+1][j+1]
         n_matrix[i//2][j//2] = sum
-
-      else:
-        continue
+        
   return n_matrix
 
 #DO NOT CHANGE THE CODE BELOW
